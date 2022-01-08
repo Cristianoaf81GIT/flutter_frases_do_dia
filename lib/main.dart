@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 // Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -7,22 +9,18 @@ void main() {
       home: Container(
         color: Colors.white,
         child: Column(
-          children: const <Widget>[
-            Text(
-              '''
-
-Lorem ipsum ''',
-              style: TextStyle(
-                  fontSize: 50,
-                  color: Colors.black,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.normal,
-                  letterSpacing: 0,
-                  wordSpacing: 0,
-                  decoration: TextDecoration.underline,
-                  decorationStyle: TextDecorationStyle.solid,
-                  decorationColor: Colors.greenAccent),
-            )
+          children: <Widget>[
+            TextButton(
+                onPressed: () {
+                  print("botão pressionado");
+                },
+                child: Text(
+                  "Botão",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      decoration: TextDecoration.none),
+                ))
           ],
         ),
       )));
