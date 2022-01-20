@@ -5,25 +5,27 @@ import 'package:flutter/material.dart';
 // Lorem ipsum dolor sit amet, consectetur adipiscing elit
 void main() {
   runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       title: "Frases do dia",
       home: Container(
-        // color: Colors.white,
         padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+        // margin: EdgeInsets.fromLTRB(10, 20, 30, 40),
         // margin: EdgeInsets.only(top: 50, left: 50),
-        margin: EdgeInsets.all(20),
+        margin: EdgeInsets.all(0),
         decoration:
-            BoxDecoration(border: Border.all(width: 3, color: Colors.white)),
+            BoxDecoration(border: Border.all(width: 3, color: Colors.blue)),
         child: Row(
           children: const <Widget>[
-            Text("t1"),
+            Text("T1"),
+
             Padding(
-              padding: EdgeInsets.all(40),
-              child: Text("t2"),
+              padding: EdgeInsets.all(30),
+              child: Text("T2"),
             ),
-            Text("t3")
+
+            Text("T3")
             // Text(
-            //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id.",
+            //   "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
             //   textAlign: TextAlign.justify,
             // )
           ],
