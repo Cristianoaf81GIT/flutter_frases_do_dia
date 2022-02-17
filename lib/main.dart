@@ -12,9 +12,9 @@ void main() {
         decoration:
             BoxDecoration(border: Border.all(width: 3, color: Colors.blue)),
         child: Row(
-          children: const <Widget>[Text("T1"), Text("T2"), Text("T3")],
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [Text("T1"), Text("T2"), Text("T3")],
         ),
       )));
 }
