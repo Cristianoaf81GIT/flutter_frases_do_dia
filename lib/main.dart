@@ -11,10 +11,12 @@ void main() {
         margin: EdgeInsets.only(top: 40),
         decoration:
             BoxDecoration(border: Border.all(width: 3, color: Colors.blue)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [Text("T1"), Text("T2"), Text("T3")],
+        /**
+             * contain, cover, fill, fitHeight, fitWidth, none, scaleDown
+             */
+        child: Image.asset(
+          "images/mesa.jpg",
+          fit: BoxFit.scaleDown,
         ),
       )));
 }
