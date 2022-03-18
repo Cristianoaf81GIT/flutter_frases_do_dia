@@ -1,82 +1,60 @@
-// ignore_for_file: avoid_print, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
-/**
- *  Stateless -> Widgets que não pode ser alterados
- *  Stateful -> Widgets que podem ser alterados
- */
-
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomeStateful()));
+  runApp(const MaterialApp(
+    home: Home(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 
-class HomeStateful extends StatefulWidget {
-  const HomeStateful({Key? key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() => _HomeStatefulState();
-}
-
-class _HomeStatefulState extends State<HomeStateful> {
-  var _texto = "Cristiano";
-
-  @override
-  Widget build(BuildContext context) {
-    print("Build chamado");
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Instagram"),
-        backgroundColor: Colors.green,
-      ),
-      // ignore: avoid_unnecessary_containers
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _texto = "Curso Flutter";
-                });
-              },
-              child: Text("Clique aqui"),
-              style: ElevatedButton.styleFrom(primary: Colors.amber),
-            ),
-            Text("Nome: $_texto")
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  final _titulo = "Instagram";
-
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_titulo),
+        title: const Text("Frases do dia"),
         backgroundColor: Colors.green,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Text("Conteúdo principal"),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.lightGreen,
-        child: Padding(
-          padding: EdgeInsets.all(16),
-          child: Row(
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [Text("Texto 1"), Text("Texto 2")],
-          ),
-        ),
-      ),
+      body: Container(
+          padding: const EdgeInsets.all(16),
+          // width: double.infinity,
+          // decoration:
+          //     BoxDecoration(border: Border.all(width: 3, color: Colors.amber)),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Image.asset("images/logo.png"),
+                const Text(
+                  "Clique Abaixo para gerar uma Frase!",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black),
+                ),
+                ElevatedButton(
+                  child: const Text(
+                    "Nova Frase",
+                    style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  style: ElevatedButton.styleFrom(primary: Colors.green),
+                  onPressed: () {},
+                )
+              ],
+            ),
+          )),
     );
   }
 }
